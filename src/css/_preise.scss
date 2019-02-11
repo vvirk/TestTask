@@ -1,5 +1,11 @@
+.preise-article__img {
+    margin-left: 10px;
+}
 @media (max-width: 600px) {
     .preise-article__contnent {
         order: 2;
+    }
+    .preise-article__img {
+        margin-left: 0;
     }
 }
