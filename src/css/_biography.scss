@@ -1,0 +1,51 @@
+.biography {
+    width: 100%;
+    &__inner {
+        padding: 50px 0;
+    }
+}
+
+.article {
+    @include space-between;
+    &__content {
+        width: 100%;
+        max-width: 600px;
+    }
+    &__img {
+        max-width: 300px;
+        max-height: 300px;
+        margin: 0 10px;
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+    }
+    &__text {
+        margin-top: 40px;
+        line-height: 24px;
+    }
+}
+
+.title {
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+@media (max-width: 800px) {
+    .article__text {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .article {
+        flex-direction: column;
+        align-items: center;
+        &__img {
+            margin-bottom: 40px;
+        }
+    }
+}
