@@ -1,0 +1,117 @@
+.header {
+    position: relative;
+    width: 100%;
+    background-color: $blue;
+    z-index: 999;
+    &__inner {
+        padding: 40px 0;
+    }
+    &__title {
+        color: #fff;
+        font-size: 42px;
+        font-weight: 700;
+    }
+}
+
+.content {
+    max-width: 1040px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.menu-toggle,
+.mobile-menu {
+    display: none;
+}
+
+.menu {
+    max-width: 100%;
+    padding-top: 40px;
+    @include space-between;
+    &__link {
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        text-transform: uppercase;
+        &:hover {
+            text-decoration: underline;
+            transition: .5s;
+            transform: scale(1.1);
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .menu {
+        display: none;
+    }
+    
+    .header__inner {
+        @include space-between-and-items-center;
+    }
+    //mobile menu
+
+    .menu-toggle {
+		display: block;
+        cursor: pointer;
+        &:hover {
+            transform: rotate(360deg);
+            transition: 1s;
+        }
+        &__line {
+            width: 30px;
+		    height: 2px;
+		    margin-bottom: 10px;
+		    background-color: #fff;
+	        &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    
+    .mobile-menu{
+        position: fixed;
+		width: 100%;
+        height: 100vh;
+        top: 0;
+        padding-top: 122px;
+        background: $blue;
+        overflow-y: scroll;
+		text-align: center;
+		transform: translate(0, -999%);
+        transition: all 0.2s ease-in-out;
+        z-index: 99;
+        &__link {
+            color: #fff;
+		    display: block;
+		    padding: 15px 20px;
+	        &:hover {
+                transition: .5s;
+                transform: scale(1.1);
+            }
+        }
+	}
+
+	.menu-toggle_active {
+        display: block;
+		transform: translate(0, 0);
+		transition: all 0.2s ease-in-out;
+	}
+}
+
+@media (max-width: 600px) {
+    .header__title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 420px) {
+    .header__title {
+        font-size: 20px;
+    }
+
+    .mobile-menu {
+        padding-top: 106px;
+    }
+}
