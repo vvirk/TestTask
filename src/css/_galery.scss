@@ -1,0 +1,54 @@
+.galery {
+    width: 100%;
+}
+
+.sl {
+    width: 100%;
+    max-width: 1040px;
+    max-height: 450px;
+    margin: 0 auto;
+    overflow: hidden;
+    cursor: pointer;
+    .slick-list,
+    .slick-slide,
+    .slick-current
+    .slick-active {
+        max-height: 450px;
+    }
+    .slick-arrow::before {
+        color: $blue;
+        font-size: 47px;
+    }
+    .slick-next {
+        right: 45px;
+    }
+    .slick-prev {
+        left: 20px;
+        z-index: 99;
+    }
+}
+
+.sl-slide {
+    max-width: 1040px;
+    max-height: 450px;
+    &__img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    .sl .slick-arrow::before {
+        font-size: 37px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sl .slick-arrow::before {
+        font-size: 27px;
+    }
+
+    .sl .slick-next {
+        right: 20px;
+    }
+}
